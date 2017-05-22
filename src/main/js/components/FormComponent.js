@@ -28,9 +28,7 @@ class FormComponent extends Component {
 
 
      onSuccess(){
-    console.log('success');
          this.state.loading=false;
-         this.render();
 
 
 
@@ -38,14 +36,13 @@ class FormComponent extends Component {
      }
 
     onLoading() {
+         console.log('loading');
         this.state.loading=true;
         this.state = this.getInit;
-        this.render();
      }
 
      onError() {
          this.state.loading=false;
-         this.render();
 
 
          console.log('error');
@@ -57,7 +54,6 @@ handleChange(key){
         var state = {};
         state[key] = e.target.value;
         this.setState(state);
-        console.log(this.state);
 
     }.bind(this);
 }
@@ -65,8 +61,6 @@ handleChange(key){
 
     onSubmit(){
 
-console.log('onsubmit');
-            console.log('onsubmitinside');
 
         var SearchData={
             query:this.state.query,
@@ -76,7 +70,7 @@ console.log('onsubmit');
         }
 
         $.ajax({
-            url: "http://vps393576.ovh.net:8080/YTcreator/api3",
+            url: "http://localhost:8080/api3",
             beforeSend: this.onLoading,
             type: 'POST',
             contentType: "application/json",
@@ -91,7 +85,6 @@ console.log('onsubmit');
     }
 
     render() {
-        console.log('render');
         return (
             <section id="header">
                 <div className="container">
@@ -155,7 +148,7 @@ console.log('onsubmit');
 
                     </div>
                     </div>
-                    { this.state.loading ? <h3>Loading...</h3> : null }
+                    {this.state.loading}
 
 
 

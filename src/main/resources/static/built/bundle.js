@@ -4762,9 +4762,9 @@
 	    var discoveryUrl = 'https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest';
 	
 	    gapi.client.init({
-	        'apiKey': 'AIzaSyBWFD_MgrxgF4xglPQ-iaPZ435cv2dbFKw',
+	        'apiKey': 'AIzaSyAXG3WlXzaqwRjnEj6OqfTSPIem6MV8X9Y',
 	        'discoveryDocs': [discoveryUrl],
-	        'clientId': '1002585333627-3f7cerbaa2msshar7kvqcar36omst236.apps.googleusercontent.com',
+	        'clientId': '85159034377-kohf1ommpuelap4omhvh8pmbe4426j05.apps.googleusercontent.com',
 	        'scope': SCOPE
 	    }).then(function () {
 	        GoogleAuth = gapi.auth2.getAuthInstance();
@@ -5135,7 +5135,7 @@
 	    var initModel = {
 	        accessToken: _LoginStore2.default.getAccessToken()
 	    };
-	    (0, _nodeFetch2.default)('http://vps393576.ovh.net:8080/YTcreator/start', { method: 'POST', body: JSON.stringify(initModel), headers: { 'Content-Type': 'application/json' } }).then(function (res) {
+	    (0, _nodeFetch2.default)('http://localhost:8080/start', { method: 'POST', body: JSON.stringify(initModel), headers: { 'Content-Type': 'application/json' } }).then(function (res) {
 	        return res.json();
 	    }).then(function (json) {
 	        return _dispatcher2.default.dispatch({
@@ -5158,7 +5158,7 @@
 	    var initModel = {
 	        accessToken: _LoginStore2.default.getAccessToken()
 	    };
-	    (0, _nodeFetch2.default)('http://vps393576.ovh.net:8080/YTcreator/start2', { method: 'POST', body: JSON.stringify(initModel), headers: { 'Content-Type': 'application/json' } }).then(function (res) {
+	    (0, _nodeFetch2.default)('http://localhost:8080/start2', { method: 'POST', body: JSON.stringify(initModel), headers: { 'Content-Type': 'application/json' } }).then(function (res) {
 	        return res.json();
 	    }).then(function (json) {
 	        return _dispatcher2.default.dispatch({
@@ -5177,7 +5177,7 @@
 	        category: data.category,
 	        accessToken: _LoginStore2.default.getAccessToken()
 	    };
-	    (0, _nodeFetch2.default)('http://vps393576.ovh.net:8080/YTcreator/api3', { method: 'POST', body: JSON.stringify(searchModel), headers: { 'Content-Type': 'application/json' } }).then(function (res) {
+	    (0, _nodeFetch2.default)('http://localhost:8080/api3', { method: 'POST', body: JSON.stringify(searchModel), headers: { 'Content-Type': 'application/json' } }).then(function (res) {
 	        return res.json();
 	    }).then(console.log('gulp'));
 	}
@@ -25972,22 +25972,19 @@
 	    }, {
 	        key: 'onSuccess',
 	        value: function onSuccess() {
-	            console.log('success');
 	            this.state.loading = false;
-	            this.render();
 	        }
 	    }, {
 	        key: 'onLoading',
 	        value: function onLoading() {
+	            console.log('loading');
 	            this.state.loading = true;
 	            this.state = this.getInit;
-	            this.render();
 	        }
 	    }, {
 	        key: 'onError',
 	        value: function onError() {
 	            this.state.loading = false;
-	            this.render();
 	
 	            console.log('error');
 	        }
@@ -25998,15 +25995,11 @@
 	                var state = {};
 	                state[key] = e.target.value;
 	                this.setState(state);
-	                console.log(this.state);
 	            }.bind(this);
 	        }
 	    }, {
 	        key: 'onSubmit',
 	        value: function onSubmit() {
-	
-	            console.log('onsubmit');
-	            console.log('onsubmitinside');
 	
 	            var SearchData = {
 	                query: this.state.query,
@@ -26016,7 +26009,7 @@
 	            };
 	
 	            $.ajax({
-	                url: "http://vps393576.ovh.net:8080/YTcreator/api3",
+	                url: "http://localhost:8080/api3",
 	                beforeSend: this.onLoading,
 	                type: 'POST',
 	                contentType: "application/json",
@@ -26030,7 +26023,6 @@
 	    }, {
 	        key: 'render',
 	        value: function render() {
-	            console.log('render');
 	            return _react2.default.createElement(
 	                'section',
 	                { id: 'header' },
@@ -26271,11 +26263,7 @@
 	                            )
 	                        )
 	                    ),
-	                    this.state.loading ? _react2.default.createElement(
-	                        'h3',
-	                        null,
-	                        'Loading...'
-	                    ) : null
+	                    this.state.loading
 	                )
 	            );
 	        }
@@ -36649,9 +36637,9 @@
 	    // Get API key and client ID from API Console.
 	    // 'scope' field specifies space-delimited list of access scopes.
 	    gapi.client.init({
-	        'apiKey': 'AIzaSyBWFD_MgrxgF4xglPQ-iaPZ435cv2dbFKw',
+	        'apiKey': 'AIzaSyAXG3WlXzaqwRjnEj6OqfTSPIem6MV8X9Y',
 	        'discoveryDocs': [discoveryUrl],
-	        'clientId': '1002585333627-3f7cerbaa2msshar7kvqcar36omst236.apps.googleusercontent.com',
+	        'clientId': '85159034377-kohf1ommpuelap4omhvh8pmbe4426j05.apps.googleusercontent.com',
 	        'scope': SCOPE
 	    }).then(function () {
 	        GoogleAuth = gapi.auth2.getAuthInstance();
