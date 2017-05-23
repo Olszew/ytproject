@@ -70,7 +70,7 @@ handleChange(key){
         }
 
         $.ajax({
-            url: "http://localhost:8080/api3",
+            url: "http://localhost:8080/YTcreator/api3",
             beforeSend: this.onLoading,
             type: 'POST',
             contentType: "application/json",

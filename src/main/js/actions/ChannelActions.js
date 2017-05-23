@@ -9,7 +9,7 @@ export function checkChannelExisting() {
     var initModel={
         accessToken:LoginStore.getAccessToken()
     }
-    fetch('http://localhost:8080/start', { method: 'POST', body:  JSON.stringify(initModel), headers: { 'Content-Type': 'application/json' } })
+    fetch('http://localhost:8080/YTcreator/start', { method: 'POST', body:  JSON.stringify(initModel), headers: { 'Content-Type': 'application/json' } })
         .then(res => res.json())
         .then(json => dispatcher.dispatch({
             type: "ChannelExisting",
@@ -31,7 +31,7 @@ export function getCreatedPlaylists() {
     var initModel={
         accessToken:LoginStore.getAccessToken()
     }
-    fetch('http://localhost:8080/start2', { method: 'POST', body:  JSON.stringify(initModel), headers: { 'Content-Type': 'application/json' } })
+    fetch('http://localhost:8080/YTcreator/start2', { method: 'POST', body:  JSON.stringify(initModel), headers: { 'Content-Type': 'application/json' } })
         .then(res => res.json())
         .then(json => dispatcher.dispatch({
             type: "ChannelPlaylists",
@@ -50,7 +50,7 @@ export function createPlaylist(data) {
         category:data.category,
         accessToken:LoginStore.getAccessToken()
     }
-    fetch('http://localhost:8080/api3',{ method: 'POST', body:  JSON.stringify(searchModel), headers: { 'Content-Type': 'application/json' } })
+    fetch('http://localhost:8080/YTcreator/api3',{ method: 'POST', body:  JSON.stringify(searchModel), headers: { 'Content-Type': 'application/json' } })
         .then(res => res.json())
         .then(
 console.log('gulp')

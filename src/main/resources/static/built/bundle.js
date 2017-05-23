@@ -5135,7 +5135,7 @@
 	    var initModel = {
 	        accessToken: _LoginStore2.default.getAccessToken()
 	    };
-	    (0, _nodeFetch2.default)('http://localhost:8080/start', { method: 'POST', body: JSON.stringify(initModel), headers: { 'Content-Type': 'application/json' } }).then(function (res) {
+	    (0, _nodeFetch2.default)('http://localhost:8080/YTcreator/start', { method: 'POST', body: JSON.stringify(initModel), headers: { 'Content-Type': 'application/json' } }).then(function (res) {
 	        return res.json();
 	    }).then(function (json) {
 	        return _dispatcher2.default.dispatch({
@@ -5158,7 +5158,7 @@
 	    var initModel = {
 	        accessToken: _LoginStore2.default.getAccessToken()
 	    };
-	    (0, _nodeFetch2.default)('http://localhost:8080/start2', { method: 'POST', body: JSON.stringify(initModel), headers: { 'Content-Type': 'application/json' } }).then(function (res) {
+	    (0, _nodeFetch2.default)('http://localhost:8080/YTcreator/start2', { method: 'POST', body: JSON.stringify(initModel), headers: { 'Content-Type': 'application/json' } }).then(function (res) {
 	        return res.json();
 	    }).then(function (json) {
 	        return _dispatcher2.default.dispatch({
@@ -5177,7 +5177,7 @@
 	        category: data.category,
 	        accessToken: _LoginStore2.default.getAccessToken()
 	    };
-	    (0, _nodeFetch2.default)('http://localhost:8080/api3', { method: 'POST', body: JSON.stringify(searchModel), headers: { 'Content-Type': 'application/json' } }).then(function (res) {
+	    (0, _nodeFetch2.default)('http://localhost:8080/YTcreator/api3', { method: 'POST', body: JSON.stringify(searchModel), headers: { 'Content-Type': 'application/json' } }).then(function (res) {
 	        return res.json();
 	    }).then(console.log('gulp'));
 	}
@@ -26009,7 +26009,7 @@
 	            };
 	
 	            $.ajax({
-	                url: "http://localhost:8080/api3",
+	                url: "http://localhost:8080/YTcreator/api3",
 	                beforeSend: this.onLoading,
 	                type: 'POST',
 	                contentType: "application/json",
